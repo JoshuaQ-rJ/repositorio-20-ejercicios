@@ -64,4 +64,5 @@ while True:
         print(f"the total of the day is: {total}")
         print(f"all the order in the day is: {num_1}")
     elif op_1==3:
+            print("thanks to for the bought, come again")
         break
