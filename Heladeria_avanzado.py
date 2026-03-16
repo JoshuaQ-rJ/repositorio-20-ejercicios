@@ -1,9 +1,9 @@
 def name():
-        name_1=input("please enter your name: ")
+        name_1=input("please enter your name: ").strip()
         if not name_1.isalpha():
             print("name not valid please try again")
             return name()        
-        else:
+        else:        
             return name_1    
 def product():
     try:
@@ -50,21 +50,18 @@ while True:
         name_1=name()
         op = str(product())
         can=many()
-        opti={"1":3000,"2":4000,"3":9000}        
-        order.append({"name":name_1,"order":opti.get(op),"many":can})
-        print("\n---available products---")
+        opt={"1":3000,"2":4000,"3":9000}        
+        order.append({"name":name_1,"order":opt.get(op),"many":can})
+        print("\n---clients register---")
         for p in order:
             sub_total=p["order"]*p["many"]
             print(f"{p["name"]}: ${p["order"]} your total is: {sub_total}")
     elif op_1==2:
-        for i in order:
-            total+=i["order"]*["many"]
+        total=0
+        for i in order:            
+            total+=i["order"]*i["many"]
             num_1=len(order)
-            print(f"the total of the day is: {total}")
-            print(f"all the ordes in the day is: {num_1}")
+        print(f"the total of the day is: {total}")
+        print(f"all the order in the day is: {num_1}")
     elif op_1==3:
         break
-
-
-
-
